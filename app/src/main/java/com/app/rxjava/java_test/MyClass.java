@@ -2,6 +2,8 @@ package com.app.rxjava.java_test;
 
 import android.app.IntentService;
 import android.os.AsyncTask;
+import android.os.Handler;
+import android.os.HandlerThread;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -20,7 +22,8 @@ public class MyClass {
         View view;
         LinearLayout linearLayout;
         AsyncTask asyncTask;
-
+        HandlerThread handlerThread;
+        Handler handler;
 
         ThreadLocal<Integer> threadLocal = new ThreadLocal<>();
         threadLocal.set(12);
