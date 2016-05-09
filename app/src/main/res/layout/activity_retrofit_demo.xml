@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".retrofit.RetrofitDemoActivity">
+
+
+    <Button
+        android:id="@+id/btn_rtf_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnClick"
+        android:text="Retrofit Callback标准实现"
+        android:textAllCaps="false"/>
+
+
+    <Button
+        android:id="@+id/btn_rtf_02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnClick"
+        android:text="Retrofit Rxjava方式实现实现"
+        android:textAllCaps="false"/>
+
+    <Button
+        android:id="@+id/btn_rtf_03"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnClick"
+        android:text="Retrofit 封装Rxjava请求过程"
+        android:textAllCaps="false"/>
+    <Button
+        android:id="@+id/btn_rtf_04"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="btnClick"
+        android:text="Retrofit 取消请求网络"
+        android:textAllCaps="false"/>
+
+</LinearLayout>

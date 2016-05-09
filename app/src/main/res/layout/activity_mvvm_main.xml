@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="com.app.rxjava.mvvm.common.MyStringUtils"/>
+
+        <variable
+            name="user"
+            type="com.app.rxjava.mvvm.bean.User"/>
+
+        <variable
+            name="observerUser"
+            type="com.app.rxjava.mvvm.bean.ObservableUser"/>
+
+        <variable
+            name="plainUser"
+            type="com.app.rxjava.mvvm.bean.PlainUser"/>
+    </data>
+
+    <LinearLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="com.app.rxjava.mvvm.MvvmMainActivity">
+
+        <TextView
+            android:id="@+id/tv_mvc_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{MyStringUtils.convertName(user.name)}"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{MyStringUtils.convertAge(user.age)}"
+            />
+
+        <Button
+            android:id="@+id/btn_mvvp_01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:onClick="btnClick"
+            android:text="更新界面BaseObserver"
+            android:textAllCaps="false"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{MyStringUtils.convertName(observerUser.name)}"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{MyStringUtils.convertAge(observerUser.age)}"
+            />
+
+        <Button
+            android:id="@+id/btn_mvvp_02"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:onClick="btnClick"
+            android:text="更新界面ObserverFiled"
+            android:textAllCaps="false"/>
+
+<!--        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{plainUser.name}"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@{plainUser.age}"
+            />-->
+    </LinearLayout>
+</layout>
