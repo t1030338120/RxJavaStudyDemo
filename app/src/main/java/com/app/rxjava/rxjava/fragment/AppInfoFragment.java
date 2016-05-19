@@ -173,4 +173,8 @@ public class AppInfoFragment extends Fragment {
         // TODO: Update argument type and name
         void onListFragmentInteraction(AppInfo item);
     }
+
+
+
+
 }
