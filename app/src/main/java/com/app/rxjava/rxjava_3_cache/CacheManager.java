@@ -1,6 +1,7 @@
 package com.app.rxjava.rxjava_3_cache;
 
 import rx.Observable;
+import rx.functions.Func1;
 
 /**
  * 描述：Rxjava实现数据的3级缓存功能（内存->磁盘->网络）
@@ -14,7 +15,13 @@ public class CacheManager {
     public static void getData() {
         // Create our sequence for querying best available data
         Observable<Data> source = Observable.concat(sources.memory(), sources.disk(), sources.network())
-                .first(data -> data != null && data.isUpToDate());
+                .first(new Func1<Data, Boolean>() {
+                    @Override
+                    public Boolean call(Data data) {
+                        return data != null && data.isUpToDate();
+                    }
+                })/*
+                .first(data -> data != null && data.isUpToDate())*/;
 
         //第一次加载数据
         source.repeat(2)

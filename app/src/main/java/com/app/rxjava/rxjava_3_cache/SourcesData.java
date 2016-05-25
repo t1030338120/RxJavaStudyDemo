@@ -8,14 +8,14 @@ import rx.functions.Action1;
  * Simulates three different sources - one from memory, one from disk,
  * and one from network. In reality, they're all in-memory, but let's
  * play pretend.
- *
+ * <p>
  * Observable.create() is used so that we always return the latest data
  * to the subscriber; if you use just() it will only return the data from
  * a certain point in time.
- *
- *  模拟三种不同的数据来源 - 一个来自内存，一个来磁盘，和一个来自网络。
- *  在真实的环境中，他们都在内存中，这里让我们先测试下。
- *
+ * <p>
+ * 模拟三种不同的数据来源 - 一个来自内存，一个来磁盘，和一个来自网络。
+ * 在真实的环境中，他们都在内存中，这里让我们先测试下。
+ * <p>
  * 使用Observable.create() 方法，可以保证返回到Subscriber的数据总是最新的，
  * 如果使用just() 方法，它只会返回在某一时间点上的数据。
  */
@@ -59,11 +59,11 @@ public class SourcesData {
             subscriber.onCompleted();
         });
 
-//        Observable<Data> observable = Observable.just(disk);
+        //        Observable<Data> observable = Observable.just(disk);
 
         // Cache disk responses in memory
         return observable.doOnNext(data -> memory = data)
-            .compose(logSource("DISK"));
+                .compose(logSource("DISK"));
     }
 
     public Observable<Data> network() {
@@ -95,11 +95,9 @@ public class SourcesData {
         return dataObservable -> dataObservable.doOnNext(data -> {
             if (data == null) {
                 System.out.println(source + " does not have any data.");
-            }
-            else if (!data.isUpToDate()) {
+            } else if (!data.isUpToDate()) {
                 System.out.println(source + " has stale data.");
-            }
-            else {
+            } else {
                 System.out.println(source + " has the data you are looking for!.");
             }
         });
