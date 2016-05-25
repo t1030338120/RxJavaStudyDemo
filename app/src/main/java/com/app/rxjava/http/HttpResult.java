@@ -1,4 +1,4 @@
-package com.app.rxjava.retrofit.entity;
+package com.app.rxjava.http;
 
 /**
  * 服务器返回的数据格式抽象类

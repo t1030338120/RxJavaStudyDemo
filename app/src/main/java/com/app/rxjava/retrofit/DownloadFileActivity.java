@@ -2,12 +2,12 @@ package com.app.rxjava.retrofit;
 
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import com.app.rxjava.BaseActivity;
 import com.app.rxjava.R;
 
 import java.io.File;
@@ -23,7 +23,7 @@ import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 import rx.subjects.PublishSubject;
 
-public class DownloadFileActivity extends AppCompatActivity {
+public class DownloadFileActivity extends BaseActivity {
 
     static String TAG = "RxJavaDemo";
     private ProgressBar mProgressBar;
@@ -32,7 +32,7 @@ public class DownloadFileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setCusContentView(R.layout.activity_main2);
         mProgressBar = (ProgressBar) findViewById(R.id.progressbar);
         mBtnStartDown = (Button) findViewById(R.id.btn_start_down);
     }

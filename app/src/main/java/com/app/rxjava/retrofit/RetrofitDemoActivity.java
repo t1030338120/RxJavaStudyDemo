@@ -1,14 +1,14 @@
 package com.app.rxjava.retrofit;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 
+import com.app.rxjava.BaseActivity;
 import com.app.rxjava.R;
 import com.app.rxjava.http.HttpMethods;
+import com.app.rxjava.http.HttpResult;
 import com.app.rxjava.http.IpInfoService;
-import com.app.rxjava.retrofit.entity.HttpResult;
 import com.app.rxjava.retrofit.entity.IpInfoEntity;
 
 import retrofit2.Call;
@@ -25,7 +25,7 @@ import rx.schedulers.Schedulers;
  * 参考：RxJava 与 Retrofit 结合的最佳实践
  * http://gank.io/post/56e80c2c677659311bed9841
  */
-public class RetrofitDemoActivity extends AppCompatActivity {
+public class RetrofitDemoActivity extends BaseActivity {
 
     static final String TAG = "Rxjava-Retrofit";
     private Subscriber<IpInfoEntity> mIpInfoEntitySubscriber;
@@ -33,7 +33,7 @@ public class RetrofitDemoActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_retrofit_demo);
+        setCusContentView(R.layout.activity_retrofit_demo);
     }
 
 

@@ -1,6 +1,5 @@
 package com.app.rxjava.http;
 
-import com.app.rxjava.retrofit.entity.HttpResult;
 import com.app.rxjava.retrofit.entity.IpInfoEntity;
 
 import java.util.concurrent.TimeUnit;
@@ -138,12 +137,16 @@ public class HttpMethods {
     private class HttpResultFunc<T> implements Func1<HttpResult<T>, T> {
         @Override
         public T call(HttpResult<T> httpResult) {
-            if (httpResult.getResultCode() != 0) {
-                throw new ApiException(httpResult.getResultCode());
+            if (httpResult.getResultCode() != 100) {
+                throw new ApiException(100);
             }
             return httpResult.getData();
         }
     }
+
+
+
+
 
 
 

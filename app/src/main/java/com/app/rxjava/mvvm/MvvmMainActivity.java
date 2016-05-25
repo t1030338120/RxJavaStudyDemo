@@ -4,16 +4,16 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ObservableField;
 import android.databinding.ObservableInt;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import com.app.rxjava.BaseActivity;
 import com.app.rxjava.R;
 import com.app.rxjava.databinding.ActivityMvvmMainBinding;
 import com.app.rxjava.mvvm.bean.ObservableUser;
 import com.app.rxjava.mvvm.bean.PlainUser;
 import com.app.rxjava.mvvm.bean.User;
 
-public class MvvmMainActivity extends AppCompatActivity {
+public class MvvmMainActivity extends BaseActivity {
 
     private ObservableUser mObserver_user;
     private ActivityMvvmMainBinding mBinding;

@@ -1,6 +1,5 @@
 package com.app.rxjava.http;
 
-import com.app.rxjava.retrofit.entity.HttpResult;
 import com.app.rxjava.retrofit.entity.IpInfoEntity;
 
 import retrofit2.Call;
