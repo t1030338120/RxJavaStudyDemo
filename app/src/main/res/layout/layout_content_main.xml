@@ -126,6 +126,14 @@
             android:text="RXJava Observable.doOnNext()方法线程测试"
             android:textAllCaps="false"/>
 
+        <Button
+            android:id="@+id/btn_14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="btnClick"
+            android:text="Loader学习Demo"
+            android:textAllCaps="false"/>
+
     </LinearLayout>
 
 </android.support.v4.widget.NestedScrollView>

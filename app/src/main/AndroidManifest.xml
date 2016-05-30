@@ -36,6 +36,8 @@
         </activity>
         <activity android:name=".rxjava_3_cache.RxJavaCacheMainActivity">
         </activity>
+        <activity android:name=".loader.LoaderStudyActivity">
+        </activity>
     </application>
 
 </manifest>

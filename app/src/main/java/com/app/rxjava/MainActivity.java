@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.app.rxjava.loader.LoaderStudyActivity;
 import com.app.rxjava.mvc.MvcMainActivity;
 import com.app.rxjava.mvp.ui.MvpDemoMainActivity;
 import com.app.rxjava.mvvm.MvvmMainActivity;
@@ -113,6 +114,9 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_13:
                 testDoOnNext();
                 //                testSample();
+                break;
+            case R.id.btn_14:
+                startActivity(new Intent(this, LoaderStudyActivity.class));
                 break;
         }
     }
