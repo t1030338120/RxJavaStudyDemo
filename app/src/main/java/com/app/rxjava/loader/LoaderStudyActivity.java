@@ -41,8 +41,8 @@ public class LoaderStudyActivity extends AppCompatActivity implements LoaderMana
     @Override
     public Loader onCreateLoader(int id, Bundle args) {
         System.out.println("=========LoaderManager.LoaderCallbacks ：onCreateLoader( )执行了");
-//        return new TastLoader(this);
-        return new TastAsyncLoader(this);
+//        return new TastAsyncLoader(this);
+        return new TastLoader(this);
     }
 
     @Override

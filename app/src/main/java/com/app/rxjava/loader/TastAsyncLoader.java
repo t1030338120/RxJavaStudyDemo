@@ -37,23 +37,30 @@ public class TastAsyncLoader extends AsyncTaskLoader<String> {
     protected void onForceLoad() {
         System.out.println("=========Loader ：onForceLoad( )执行了");
         super.onForceLoad();
-
-//        data = datas[new Random().nextInt(datas.length)];
-
-//        deliverResult(data);
     }
 
 
     @Override
     public void deliverResult(String data) {
         System.out.println("=========Loader ：deliverResult( )执行了");
+
+
+        if(isReset() && data != null){
+            data = null;
+        }
+
+        if(isStarted()){
         super.deliverResult(data);
+        }
+
     }
 
     @Override
     protected void onStopLoading() {
         System.out.println("=========Loader ：onStopLoading( )执行了");
         super.onStopLoading();
+
+        cancelLoad();
     }
 
 
@@ -62,6 +69,15 @@ public class TastAsyncLoader extends AsyncTaskLoader<String> {
     protected void onReset() {
         System.out.println("=========Loader ：onReset( )执行了");
         super.onReset();
+
+        // 确保Loader已经stoped
+        onStopLoading();
+
+
+        // 如果有需要，在这里我们可以释放app的资源
+        if (data != null) {
+            data = null;
+        }
     }
 
 

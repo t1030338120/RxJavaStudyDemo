@@ -34,21 +34,44 @@ public class TastLoader extends Loader<String> {
     @Override
     public void deliverResult(String data) {
         System.out.println("=========Loader ：deliverResult( )执行了");
-        super.deliverResult(data);
+
+        if(isReset()){
+            if(data != null){
+                data = null;
+            }
+        }
+
+
+        if (isStarted()) {
+            // If the Loader is currently started, we can immediately
+            // deliver its results.
+            super.deliverResult(data);
+        }
+
     }
 
     @Override
     protected void onStopLoading() {
         super.onStopLoading();
         System.out.println("=========Loader ：onStopLoading( )执行了");
+
+        cancelLoad();
     }
 
 
 
     @Override
     protected void onReset() {
-        super.onReset();
         System.out.println("=========Loader ：onReset( )执行了");
+        super.onReset();
+
+        // 确保Loader已经stoped
+        onStopLoading();
+
+        // 如果有需要，在这里我们可以释放app的资源
+        if (data != null) {
+            data = null;
+        }
     }
 
     @Override

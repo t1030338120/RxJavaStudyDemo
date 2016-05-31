@@ -3,6 +3,8 @@ package com.app.rxjava;
 import android.app.Application;
 import android.test.ApplicationTestCase;
 
+import com.app.rxjava.unit_test.Calculator;
+
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -28,6 +30,24 @@ public class ApplicationTest extends ApplicationTestCase<Application> {
     public ApplicationTest() {
         super(Application.class);
     }
+
+
+    Calculator mCalculator;
+
+    @Override
+    protected void setUp() throws Exception {
+        super.setUp();
+
+        mCalculator = new Calculator();
+    }
+
+
+
+    public void testSum() throws Exception {
+        //expected: 6, sum of 1 and 5
+        assertEquals(6d, mCalculator.sum(1d, 5d), 0);
+    }
+
 
     public void testRxJavaOnError() {
         String value = null;
