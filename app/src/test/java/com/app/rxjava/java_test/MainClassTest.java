@@ -5,6 +5,12 @@ import com.app.rxjava.dagger2.DaggerFruitComponent;
 
 import org.junit.Test;
 
+import java.lang.Override;
+import java.lang.String;
+
+import rx.Observable;
+import rx.functions.Action1;
+
 /**
  * 描述：
  * 作者：tyc
@@ -26,4 +32,21 @@ public class MainClassTest {
 
 
     }
+
+
+
+    @Test
+    public void testRxJava(){
+
+        Observable.just("123")
+                .subscribe(new Action1<String>() {
+                    @Override
+                    public void call(String s) {
+                        System.out.println("===="+s);
+                    }
+                });
+
+    }
+
+
 }
