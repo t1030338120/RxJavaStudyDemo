@@ -29,8 +29,7 @@ public class JokeAdapter extends RecyclerView.Adapter {
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.joke_list_item,
-                parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.joke_list_item, parent, false);
         JokeViewHolder holder = new JokeViewHolder(view);
         return holder;
     }

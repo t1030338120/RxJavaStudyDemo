@@ -12,8 +12,9 @@ public class PresenterLoader<T extends Presenter> extends Loader<T> {
     private PresenterFactory<T> factory;
     private T presenter;
 
-    public PresenterLoader(Context context) {
+    public PresenterLoader(Context context, PresenterFactory<T> presenterFactory) {
         super(context);
+        this.factory = presenterFactory;
     }
 
 
